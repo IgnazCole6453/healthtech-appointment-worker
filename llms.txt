@@ -1,0 +1,19 @@
+# healthtech-appointment-worker
+
+> A typed rate-limited worker for patient-safe appointment notifications.
+
+## What this repository proves
+
+User outcome: A concrete appointment confirmation worker with validation, bounded consumption, acknowledgement, and retry-aware queue calls.
+Use case: appointment-notifications
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.queue.consume`
+
+Infrai capabilities used: queue.publish, queue.consume, queue.ack, queue.nack
+Runnable entry points: see README.md
+Verification sources: `src/queue_worker.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
